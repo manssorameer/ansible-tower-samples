@@ -1,0 +1,5 @@
+- name: gother Facts
+  hosts: *
+  tasks:
+    - name: Collect facts
+      setup:
