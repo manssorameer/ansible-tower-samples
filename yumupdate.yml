@@ -4,7 +4,7 @@
     - name: run yum update
       yum:
          name: "*"
-         status: latest
+         state: latest
     - name: rebooting if requried
       reboot:
       when: "{{rebooting}}"
