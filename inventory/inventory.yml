@@ -1,7 +1,0 @@
-awx:
-  hosts:
-    34.121.149.114
-git:
-  hosts:
-    "{{ variable_host | default('34.121.149.115') }}"
-    
