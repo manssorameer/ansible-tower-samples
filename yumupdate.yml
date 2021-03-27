@@ -1,0 +1,14 @@
+- name: update all packages
+  hosts: "{{ hosts }}"
+  tasks:
+    - name: run yum update
+      yum:
+         name: "*"
+         status: latest
+    - name: rebooting if requried
+      reboot:
+      when: "{{rebooting}}" == true
+         
+         
+      
+  
