@@ -7,7 +7,7 @@
          status: latest
     - name: rebooting if requried
       reboot:
-      when: "{{rebooting}}" == true
+      when: "{{rebooting}}"
          
          
       
