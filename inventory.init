@@ -1,0 +1,4 @@
+[awx]
+localhost
+[git]
+10.128.0.15
