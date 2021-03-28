@@ -1,7 +1,5 @@
-- hosts: 10.128.0.14
+- hosts: all
   tasks:
           - name: gatherfacts
             setup:
-            delegate_to: 10.128.0.15
-            delegate_facts: true
             tags: runthis
