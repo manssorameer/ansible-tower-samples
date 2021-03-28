@@ -2,3 +2,4 @@
   tasks:
           - name: gatherfacts
             setup:
+            tags: runthis
