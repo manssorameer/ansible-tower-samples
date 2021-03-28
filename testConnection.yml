@@ -1,6 +1,6 @@
 - hosts: all
   vars:
-          fileWeb: "{{ lookup('file','/tmp/websites').splitlines() | list }}"
+          fileWeb: "{{ lookup('file','testConnection.yml').splitlines() | list }}"
   tasks:
     - name: Display file
       debug: msg="his file contains {{ fileWeb }}"
