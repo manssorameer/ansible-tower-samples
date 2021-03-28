@@ -1,0 +1,8 @@
+- hosts: all
+  tasks:
+    - name: Pause play until a URL is reachable from this host
+      uri:
+        url: {{ item }}
+        follow_redirects: none
+        method: GET
+        with_item: "{{ lookup('file','/tmp/websites') | list }}"
