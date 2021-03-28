@@ -5,4 +5,4 @@
         url: "{{ item }}"
         follow_redirects: none
         method: GET
-        with_item: "{{ lookup('file','/tmp/websites') | list }}"
+      with_item: "{{ lookup('file','/tmp/websites') | list }}"
