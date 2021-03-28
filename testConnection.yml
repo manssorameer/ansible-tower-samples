@@ -1,8 +1,12 @@
 - hosts: all
+  vars:
+          fileWeb: "{{ lookup('file','/tmp/websites').splitlines() | list }}"
   tasks:
+    - name: Display file
+      debug: msg="his file contains {{ fileWeb }}"
     - name: Pause play until a URL is reachable from this host
       uri:
-        url: "{{ item }}"
+        url: "https://{{ item }}"
         follow_redirects: none
         method: GET
-      loop: "{{ lookup('file','/tmp/websites') | list }}"
+      loop: "{{ fileWeb }}"
