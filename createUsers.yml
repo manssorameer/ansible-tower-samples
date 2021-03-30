@@ -5,8 +5,6 @@
     - name: Display file
       debug: msg="his file contains "
     - name: Pause play until a URL is reachable from this host
-      uri:
-        url: "https://{{ item.name }}"
-        follow_redirects: none
-        method: GET
+      debug:
+        msg: "{{ item.name }}"
       with_items: "{{ users }}"
