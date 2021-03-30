@@ -1,6 +1,6 @@
 - hosts: all
   vars:
-          fileWeb: "{{ lookup('file', 'users.yml').splitlines()|map('from_yaml') | list | items2dict}}"
+          fileWeb: "{{ lookup('file', 'users.yml').splitlines()|map('from_yaml') | list }}"
   tasks:
     - name: Display file
       debug: msg="his file contains {{ fileWeb }}"
@@ -9,4 +9,4 @@
         url: "https://{{ item.name }}"
         follow_redirects: none
         method: GET
-      loop: "{{  lookup('dict', fileWeb) }}"
+      loop: "{{ fileWeb }}"
