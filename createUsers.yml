@@ -9,4 +9,4 @@
         url: "https://{{ item.name }}"
         follow_redirects: none
         method: GET
-      loop: "{{ lookup('item', users) }}"
+      with_item: "{{ users }}"
