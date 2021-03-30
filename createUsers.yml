@@ -9,4 +9,4 @@
         url: "https://{{ item.name }}"
         follow_redirects: none
         method: GET
-      with_item: "{{ users }}"
+      with_items: "{{ users }}"
