@@ -6,7 +6,7 @@
       debug: msg="his file contains {{ fileWeb }}"
     - name: Pause play until a URL is reachable from this host
       uri:
-        url: "https://{{ item }}"
+        url: "https://{{ item.name }}"
         follow_redirects: none
         method: GET
-      loop: "{{ fileWeb }}"
+      loop: "{{ fileWeb | dict}}"
