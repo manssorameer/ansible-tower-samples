@@ -3,7 +3,7 @@
     - users.yml
   tasks:
     - name: Display file
-      debug: msg="his file contains {{ fileWeb }}"
+      debug: msg="his file contains "
     - name: Pause play until a URL is reachable from this host
       uri:
         url: "https://{{ item.name }}"
