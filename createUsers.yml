@@ -1,6 +1,6 @@
 - hosts: all
-  vars:
-          fileWeb: "{{ lookup('file', 'users.yml').splitlines()|map('from_yaml') | list }}"
+  vars_files:
+    - users.yml
   tasks:
     - name: Display file
       debug: msg="his file contains {{ fileWeb }}"
