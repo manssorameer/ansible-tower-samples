@@ -1,4 +1,7 @@
-- user: hamssah
-  name: mohammed
-  middle: khalid
-  last: yusof
+users:
+  - name: testuser3
+    comment: testuser3
+    groups: wheel
+  - name: testuser4
+    comment: testuser4
+    groups: users
