@@ -2,12 +2,6 @@
   vars_files:
     - users.yml
   tasks:
-    - name: Display file
-      debug: msg="his file contains "
-    - name: Pause play until a URL is reachable from this host
-      debug:
-        msg: "{{ item.name }}"
-      with_items: "{{ users }}"
     - name: Ensure group "somegroup" exists
       group:
         name: "{{ item.groups }}"
