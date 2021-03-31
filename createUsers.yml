@@ -14,4 +14,4 @@
         comment: " {{ item.name item.middle item.last }}"
         group: item.group
         password:  "{{ lookup('password', '/tmp/passwordfile chars=digits length=8 encrypt=sha1') }}"
-        with_items: "{{ users }}"
+      with_items: "{{ users }}"
