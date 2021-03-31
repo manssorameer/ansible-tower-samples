@@ -11,7 +11,7 @@
     - name: Add the user 
       user:
         name: "{{ item.name }}"
-        comment: " {{ item.name }} {{ item.middle}} {{item.last}} "
+        comment: " {{ item.name }} {{ item.middle}} {{item.lastname}} "
         group: item.group
         password:  "{{ lookup('password', '/tmp/passwordfile chars=digits length=8 encrypt=sha1_crypt') }}"
       with_items: "{{ users }}"
