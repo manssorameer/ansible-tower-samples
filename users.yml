@@ -6,4 +6,4 @@ users:
   - name: abood
     middle: ameer
     lastname: alaithan
-    groups: users
+    groups: abood
