@@ -8,10 +8,10 @@
       debug:
         msg: "{{ item.name }}"
       with_items: "{{ users }}"
-    - name: Add the user 'johnd' with a specific uid and a primary group of 'admin'
+    - name: Add the user 
       user:
         name: "{{ item.name }}"
-        comment: " {{ item.name }} {{item.middle}} {{item.last }}"
+        comment: " {{ item.name }} "
         group: item.group
         password:  "{{ lookup('password', '/tmp/passwordfile chars=digits length=8 encrypt=sha1') }}"
       with_items: "{{ users }}"
