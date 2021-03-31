@@ -18,5 +18,5 @@
         name: "{{ item.name }}"
         comment: " {{ item.name }} {{ item.middle}} {{item.lastname}} "
         group: "{{ item.groups }}"
-        password:  "{{ lookup('password', 'passwdFiles-' + item.name + ' chars=digits length=8 encrypt=md5_crypt') }}"
+        password:  "{{ lookup('password', '/root/passwdFiles-' + item.name + ' chars=digits length=8 encrypt=md5_crypt') }}"
       with_items: "{{ users }}"
