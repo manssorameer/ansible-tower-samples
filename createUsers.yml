@@ -13,6 +13,6 @@
       user:
         name: "{{ item.name }}"
         comment: " {{ item.name }} {{ item.middle}} {{item.lastname}} "
-        group: {{ item.group }}
+        group: "{{ item.group }}"
         password:  "{{ lookup('password', '/tmp/passwordfile chars=digits length=8') }}"
       with_items: "{{ users }}"
