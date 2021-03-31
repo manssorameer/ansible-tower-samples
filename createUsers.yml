@@ -7,6 +7,9 @@
         name: "{{ item.groups }}"
         state: present
       with_items: "{{ users }}"
+      tags:
+        - groupCreat
+        - never
     - name: Add the user 
       user:
         name: "{{ item.name }}"
