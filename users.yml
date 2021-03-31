@@ -1,7 +1,9 @@
 users:
-  - name: testuser3
-    comment: testuser3
-    groups: wheel
-  - name: testuser4
-    comment: testuser4
+  - name: mansour
+    middle: ameer
+    lastname: alaithan
+    groups: mansour
+  - name: abood
+    middle: ameer
+    lastname: alaithan
     groups: users
