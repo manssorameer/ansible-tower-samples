@@ -10,7 +10,7 @@
     - name: Add the user 
       user:
         name: "{{ item.name }}"
-        comment: " {{ item.name }} {{ item.middle}} {{item.lastname}} "
+        comment: "{{ item.name }} {{ item.middle}} {{item.lastname}}"
         group: "{{ item.groups }}"
         password:  "{{ lookup('password', '/root/passwdFiles-' + item.name + ' chars=digits length=8 encrypt=md5_crypt') }}"
       with_items: "{{ users }}"
