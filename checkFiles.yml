@@ -1,0 +1,5 @@
+files:
+  - path: /root/file1
+    checksum:
+  - path: /root/file2
+    checksum:
