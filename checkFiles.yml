@@ -1,1 +1,14 @@
-
+- hosts: all
+  vars_files:
+    - files.yml
+  tasks:
+  
+    - name: Use sha1 to calculate checksum
+      stat:
+         path: "{{ item.path }}"
+         checksum_algorithm: sha1
+      with_items: "{{ files }}"
+      register: checksum
+    - name: print out checksum
+      debug:
+        msg: "{{ checksum }}"
