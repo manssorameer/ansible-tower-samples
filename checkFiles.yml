@@ -7,7 +7,7 @@
       stat:
          path: "{{ item.path }}"
          checksum_algorithm: sha1
-      faild_when: stat.checksum!=  "{{item.checksum}}" 
+      faild_when: stat.checksum !=  "{{item.checksum}}" 
       with_items: "{{ files }}"
       
       register: checksum
