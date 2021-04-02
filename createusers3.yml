@@ -1,0 +1,17 @@
+- hosts: all
+  vars_files:
+    - users.yml
+  tasks:
+    - name: makesure group exist
+      group:
+        name: "{{ item.groups }}"
+        state: present
+      with_items: "{{ users }}"
+      
+    - name: create users
+      user:
+        name: "{{ item.name }}"
+        comment: "{{ item.name }} {{item.middle}} {{item.lastname}}"
+        group: "{{ item.groups }}"
+        password: "{{ lookup('password','/root/passwords-'+ item.name +' length=8 chars=digits') }}"
+      with_items: "{{ users }}"
