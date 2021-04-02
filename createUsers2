@@ -1,0 +1,17 @@
+- hosts: all
+  vars_files:
+      - users.yaml
+  tasks:
+    - name: make sure group exists
+      group:
+        name: "{{item.group}}"
+        state: present 
+      with_item: "{{ users }}"
+      
+    - name: create user
+      user:
+        name: "{{item.name}}"
+        comment: "{{item.name}} {{item.middle}} {{item.lastname}}"
+        group: "{{item.group}}"
+        password: "{{lookup('password','/root/password-' +item.name chars=ascii_letters chars=digits}}"
+      with_item: "{{ users }}"        
