@@ -13,5 +13,5 @@
         name: "{{item.name}}"
         comment: "{{item.name}} {{item.middle}} {{item.lastname}}"
         group: "{{item.groups}}"
-        password: "{{lookup('password','/root/password-' +item.name + ' chars=ascii_letters chars=digits'}}"
+        password: "{{lookup('password','/root/password-' +item.name + ' chars=ascii_letters chars=digits')}}"
       with_items: "{{ users }}"        
