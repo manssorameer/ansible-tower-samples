@@ -4,7 +4,7 @@
   tasks:
     - name: make sure group exists
       group:
-        name: "{{item.group}}"
+        name: "{{ item.groups }}"
         state: present 
       with_items: "{{ users }}"
       
@@ -12,6 +12,6 @@
       user:
         name: "{{item.name}}"
         comment: "{{item.name}} {{item.middle}} {{item.lastname}}"
-        group: "{{item.group}}"
+        group: "{{item.groups}}"
         password: "{{lookup('password','/root/password-' +item.name chars=ascii_letters chars=digits}}"
       with_items: "{{ users }}"        
