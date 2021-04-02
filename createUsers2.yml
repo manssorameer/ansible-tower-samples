@@ -1,6 +1,6 @@
 - hosts: all
   vars_files:
-      - users.yaml
+      - users.yml
   tasks:
     - name: make sure group exists
       group:
