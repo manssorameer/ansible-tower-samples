@@ -1,0 +1,11 @@
+- hosts: localhost
+  vars_files:
+    - files.yml
+  tasks:
+    - name: check state
+      stat:
+        path: "{{ item.path }}"
+        checksum_algorithm: sha1
+      register: resutls
+      failed_when: " results.checksum != item.checksum "
+      with_items: "{{ files }}"
