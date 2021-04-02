@@ -1,11 +1,11 @@
-- hosts: localhost
+- hosts: all
   vars_files:
     - files.yml
-  tasks:
-    - name: check state
+  tasks:  
+    - name: Use sha1 to calculate checksum
       stat:
-        path: "{{ item.path }}"
-        checksum_algorithm: sha1
+         path: "{{ item.path }}"
+         checksum_algorithm: sha1
       register: result
-      failed_when: "result.stat.checksum != item.checksum"
+      failed_when: "result.stat.checksum != item.checksum " 
       with_items: "{{ files }}"
