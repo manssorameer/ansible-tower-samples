@@ -1,4 +1,4 @@
-- hosts: all
+- hosts: localhost
   vars_files:
     - files.yml
   tasks:  
@@ -7,6 +7,7 @@
          path: "{{ item.path }}"
          checksum_algorithm: sha1
       register: result
+      failed_when: " result.stat.checksum != item.checksum "
       with_items: "{{ files }}"
     - debug:
         msg: "{{ result}} "
