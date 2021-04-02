@@ -6,6 +6,6 @@
       stat:
         path: "{{ item.path }}"
         checksum_algorithm: sha1
-      register: resutls
-      failed_when: "results.stat.checksum != item.checksum"
+      register: resutl
+      failed_when: "result.stat.checksum != item.checksum"
       with_items: "{{ files }}"
