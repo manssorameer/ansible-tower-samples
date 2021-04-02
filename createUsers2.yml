@@ -6,7 +6,7 @@
       group:
         name: "{{item.group}}"
         state: present 
-      with_item: "{{ users }}"
+      with_items: "{{ users }}"
       
     - name: create user
       user:
@@ -14,4 +14,4 @@
         comment: "{{item.name}} {{item.middle}} {{item.lastname}}"
         group: "{{item.group}}"
         password: "{{lookup('password','/root/password-' +item.name chars=ascii_letters chars=digits}}"
-      with_item: "{{ users }}"        
+      with_items: "{{ users }}"        
